@@ -1,25 +1,30 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Header from "./Header";
+import Propos from "./Trash/Propos";
+import Placeholder from "./Trash/Placeholder";
+import "./App.css";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import WheelNumberPicker from "./Wheel/WheelNumberPicker";
+import ButtonRun from "./RunningButton/ButtonRun";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Header />}>
+            <Route index element={<Propos />} />
+            <Route path="button" element={<ButtonRun />} />
+            <Route path="wheelpicker" element={<WheelNumberPicker />} />
+            <Route path="*" element={<Placeholder />} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
+      <footer className="bg-dark text-white text-center py-3">
+        <div className="container">
+          <p className="mb-0">©React Playground Inc. </p>
+        </div>
+      </footer>
+    </>
   );
 }
 
