@@ -96,23 +96,33 @@ function WheelFortune(wheelFortuneProps: WheelFortuneProps) {
   }, [animationFrame]);
 
   return (
-    <div className="wheel-fortune my-4">
-      <canvas
-        ref={canvasRef}
-        width="300"
-        height="300"
-        className="wheel-canvas"
-        onClick={spinWheel}
-      ></canvas>
-      <button
-        className="mt-4 btn btn-warning"
-        type="button"
-        onClick={spinWheel}
-        disabled={isSpinning}
-      >
-        {isSpinning ? "Spinning..." : "Spin the Wheel"}
-      </button>
-    </div>
+    <>
+      <div className="wheel-fortune my-4">
+        <div className={"row position-relative"}>
+          <canvas
+            ref={canvasRef}
+            width="300"
+            height="300"
+            className="wheel-canvas col"
+            onClick={spinWheel}
+          ></canvas>
+          <img
+            src={require("./arrow.png")}
+            alt={"arrow pointing at the wheel"}
+            className={"arrowPicture col position position-absolute"}
+          />
+        </div>
+
+        <button
+          className="mt-4 btn btn-warning"
+          type="button"
+          onClick={spinWheel}
+          disabled={isSpinning}
+        >
+          {isSpinning ? "Spinning..." : "Spin the Wheel"}
+        </button>
+      </div>
+    </>
   );
 }
 
