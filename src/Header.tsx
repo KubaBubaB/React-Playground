@@ -37,8 +37,8 @@ function Header() {
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/contact">
-                  Contact
+                <Link className="nav-link" to="/slider">
+                  Funny Slider
                 </Link>
               </li>
             </ul>

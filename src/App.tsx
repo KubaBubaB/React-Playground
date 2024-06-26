@@ -5,6 +5,8 @@ import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import WheelNumberPicker from "./Wheel/WheelNumberPicker";
 import ButtonRun from "./RunningButton/ButtonRun";
+import FunnySlider from "./FunnySlider/FunnySlider";
+import Home from "./Home/Home";
 
 function App() {
   return (
@@ -12,9 +14,10 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Header />}>
-            <Route index element={<Propos />} />
+            <Route index element={<Home />} />
             <Route path="button" element={<ButtonRun />} />
             <Route path="wheelpicker" element={<WheelNumberPicker />} />
+            <Route path="slider" element={<FunnySlider />} />
             <Route path="*" element={<Placeholder />} />
           </Route>
         </Routes>

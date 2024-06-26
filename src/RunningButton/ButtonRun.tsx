@@ -20,6 +20,7 @@ function ButtonRun() {
       return;
     } else {
       startTime = Date.now();
+
       const leftTmpPos = Math.floor(Math.random() * 80 + 10);
       const topTmpPos = Math.floor(Math.random() * 80 + 10);
       setButtonPosition([leftTmpPos, topTmpPos]);
